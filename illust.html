@@ -26,14 +26,15 @@
 <div id="contents">
 
 上に行くほど新しくなったりならなかったり！
-<h2>ヘッダー画像01（07/11～）</h2>
+<div style="display:none" name="image" id="mus1"><h2>ヘッダー画像01（2017/07/11～）</h2>
 初代ヘッダー画像。あまりにもヘッダーがさみしかったのでポチポチ描いちゃいました。<BR>
 <p class="resizeimage">
    <img src="./image/syodai01.png" alt="head20170711">
 </p>
 <style type="text/css">
 p.resizeimage img { width: 100%; }
-</style></BR>
+</style></BR></style>
+</div>
 </div><!-- ▲メイン▲ -->
 
 <!-- ▼フッタ▼ -->
@@ -48,10 +49,28 @@ p.resizeimage img { width: 100%; }
             <!-- ▼右メイン▼ -->
             <div id="rcontents">
                 
-                <h2>月別一言</h2>
-                作ったものをぞろぞろ乗っけてます～。絵も曲もプログラムも～。<br>
-                完全自己満の落書きのようなサイトですが、無断で物を持ってくのはやめてください！
-            </div><!-- ▲右メイン▲ -->
+                <h2>過去のヘッダー</h2>
+<div onclick="hyoji1(1)">▼ヘッダー画像01（2017/07/11～）</div>
+<div onclick="hyoji1(0)">▼非表示</div>
+
+<script>
+function hyoji1(num)
+{
+
+//全部非表示にする
+
+images = document.getElementsByName("image");
+for(i=0;i < images.length;i++){
+images[i].style.display="none";
+}
+
+// numが0より大きい場合のみnumで指定された画像を表示させる
+if(num>0){
+document.getElementById("mus" + num).style.display="block";
+}
+}
+            </script>
+            <!-- ▲右メイン▲ -->
             </div><!-- ▲右メイン▲ -->
 </div><!-- ▲全体の囲み▲ -->
 
