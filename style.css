@@ -184,9 +184,17 @@ float:left;
 margin:0 0 10px;
 width:160px
 }
+dtt {
+font-weight:700;
+float:left;
+width:100px
+}
 dd {
 border-bottom:1px dotted #000;
 margin:0 0 10px 160px
+}
+db {
+border-bottom:1px dotted #000;
 }
 dl:after{
 content:"";
