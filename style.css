@@ -8,7 +8,7 @@ html {
 font-size:62.5%
 }
 body {
-background:#fff;
+background-image:url(image/back01.gif);
 color:#000;
 font-family:Verdana,Roboto,'游ゴシック','Yu Gothic','游ゴシック体','YuGothic','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 font-size:1.1em;
@@ -39,6 +39,7 @@ float:right;
 box-sizing: border-box;
 background-color:#fff;
 margin-top:20px; margin-bottom:20px;
+border:2px solid #000;
 margin-left:20px;
 height:100%;
 width:300px /* 全体の幅・大きさはここで変更 */
@@ -51,7 +52,7 @@ width:300px /* 全体の幅・大きさはここで変更 */
 float:left;
 box-sizing: border-box;
 background-color:#fff;
-border:1px solid #000;
+border:2px solid #000;
 margin-top:20px; margin-bottom:20px;
 height:100%;
 width:600px /* 全体の幅・大きさはここで変更 */
