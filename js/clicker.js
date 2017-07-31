@@ -3,15 +3,13 @@ var damage=0;
 /* 敵へダメージ */
 var num=0;
 
-/* クリックしたときのカウント加速 */
-
-/*$(window).on('load',function(){
+$(window).on('load',function(){
     init();
-});*/
+});
 
-/*init(){
-  
-}*/
+init(){
+  damage = $.cookie("DAMAGE_CO");
+}
 
 /* クリックしたときのカウント加速 */
 function count(num) {
@@ -44,10 +42,10 @@ function save_cookie(key,num){
   $.cookie(key, num, { expires: 10000 });
 }
 
-$("#save").on('click', function(){save_cookie("KEY",damage);});
+$("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 
-function load_cookie(){
-  load = $.cookie("KEY");
+function load_cookie(key){
+  load = $.cookie("DAMAGE_CO");
   alert(load);
 }
 
