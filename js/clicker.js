@@ -9,7 +9,7 @@ function init(){
 
 /* クリックしたときのカウント加速 */
 function count(num) {
-  damage = damage + num;
+  damage = damage + parseInt(num);
   target = document.getElementById("canvas_up");
   target.innerHTML = damage;
 }
