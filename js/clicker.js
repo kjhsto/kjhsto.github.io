@@ -43,9 +43,9 @@ $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 /*function load_cookie("呼び出したい名前")*/
 function load_cookie(key){
   if($.cookie(key) === undefined){
-    $.cookie(key) = 0;
+    damage = 0;
   }else{
-    $.cookie(key);
+    damage = $.cookie(key);
   }
 }
 
