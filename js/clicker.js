@@ -12,6 +12,7 @@ var num=0;
 /*init(){
 }*/
 
+/* クリックしたときのカウント加速 */
 function count(num) {
   damage = damage + num;
   target = document.getElementById("canvas_up");
@@ -38,7 +39,7 @@ setInterval("count(1)",60000);
 
 /*クッキー保存と読み込み関数*/
 function save_cookie(){
-  $.cookie("KEY", "Y", { expires: 10000 });
+  $.cookie("KEY", damage, { expires: 10000 });
 }
 
 $("#save").on('click', function(){save_cookie();});
