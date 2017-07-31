@@ -39,7 +39,7 @@ function save_cookie(key,num){
 $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 
 /* 30秒ごとにクッキー保存 */
-setInterval("save_cookie(key,num)",30000);
+setInterval("save_cookie("DAMAGE_CO",damage)",30000);
 
 /*ダメージをロードするよ*/
 function load_damage(){
