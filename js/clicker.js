@@ -30,7 +30,6 @@ function saveai(){
 function loadai(){
   load = $.cookie("KEY");
   alert(load);
-
 }
 
 /* 一分ごとにクッキー保存 */
