@@ -4,13 +4,8 @@ var damage=0;
 var num=0;
 
 function init(){
-  damage = $.cookie("DAMAGE_CO");
+  load_cookie("DAMAGE_CO");
 }
-
-$(window).on("load",function(){
-    init();
-    alert("よばれたよ");
-});
 
 /* クリックしたときのカウント加速 */
 function count(num) {
@@ -45,9 +40,18 @@ function save_cookie(key,num){
 
 $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 
+/*function load_cookie("呼び出したい名前")*/
 function load_cookie(key){
-  load = $.cookie("DAMAGE_CO");
-  alert(load);
+  if($.cookie(key) === undefined){
+    $.cookie(key) = 0;
+  }else{
+    $.cookie(key);
+  }
 }
 
 $("#load").on('click', function(){load_cookie();});
+
+$(window).on("load",function(){
+    init();
+    alert("よばれたよ");
+});
