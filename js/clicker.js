@@ -10,6 +10,7 @@ var num=0;
 });*/
 
 /*init(){
+  
 }*/
 
 /* クリックしたときのカウント加速 */
@@ -38,11 +39,12 @@ $(enemy_tag[1]).on('click', function(){count(2);});
 setInterval("count(1)",60000);
 
 /*クッキー保存と読み込み関数*/
-function save_cookie(){
-  $.cookie("KEY", damage, { expires: 10000 });
+/*function save_cookie("保存したい名前",数値or文字列)*/
+function save_cookie(key,num){
+  $.cookie(key, num, { expires: 10000 });
 }
 
-$("#save").on('click', function(){save_cookie();});
+$("#save").on('click', function(){save_cookie("KEY",damage);});
 
 function load_cookie(){
   load = $.cookie("KEY");
