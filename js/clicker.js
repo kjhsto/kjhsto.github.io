@@ -3,14 +3,14 @@ var damage=0;
 /* 敵へダメージ */
 var num=0;
 
-$(window).on("load",function(){
-    init();
-    alert(load);
-});
-
 init(){
   damage = $.cookie("DAMAGE_CO");
 }
+
+$(window).on("load",function(){
+    init();
+    alert("よばれたよ");
+});
 
 /* クリックしたときのカウント加速 */
 function count(num) {
