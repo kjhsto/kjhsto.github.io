@@ -4,7 +4,7 @@ var damage=0;
 var num=0;
 
 function init(){
-  load_cookie("DAMAGE_CO",damage);
+  load_damage("DAMAGE_CO");
 }
 
 /* クリックしたときのカウント加速 */
@@ -41,11 +41,11 @@ function save_cookie(key,num){
 $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 
 /*function load_cookie("呼び出したい名前","入れる箱")*/
-function load_cookie(keyco,key){
-  if($.cookie(keyco) === undefined){
-    key = 0;
+function load_damage(key){
+  if($.cookie(key) === undefined){
+    damage = 0;
   }else{
-    key = parseInt($.cookie(key));
+    damage = parseInt($.cookie(key));
   }
 }
 
