@@ -46,6 +46,7 @@ function load_damage(){
     damage = 0;
   }else{
     damage = parseInt($.cookie("DAMAGE_CO"));
+    console.log(damage);
   }
 }
 
