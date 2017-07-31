@@ -3,6 +3,7 @@ var damage=0;
 /* 敵へダメージ */
 var num=0;
 
+/*初期化関数だよ*/
 function init(){
   load_damage();
 }
@@ -29,9 +30,6 @@ enemy_tag=$(".enemy");
 $(enemy_tag[0]).on('click', function(){count(1);});
 $(enemy_tag[1]).on('click', function(){count(2);});
 
-/* 一分ごとにクッキー保存 */
-setInterval("count(1)",60000);
-
 /*クッキー保存と読み込み関数*/
 /*function save_cookie("保存したい名前",数値or文字列)*/
 function save_cookie(key,num){
@@ -40,7 +38,10 @@ function save_cookie(key,num){
 
 $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 
-/*function load_cookie("呼び出したい名前","入れる箱")*/
+/* 30秒ごとにクッキー保存 */
+setInterval("save_cookie(key,num)",30000);
+
+/*ダメージをロードするよ*/
 function load_damage(){
   if($.cookie("DAMAGE_CO") === undefined){
     damage = 0;
@@ -53,9 +54,7 @@ function load_damage(){
   }
 }
 
-$("#load").on('click', function(){load_cookie();});
-
+/*初期化するよ*/
 $(window).on("load",function(){
     init();
-    alert("よばれたよ");
 });
