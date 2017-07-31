@@ -23,11 +23,11 @@ else
 //  document.cookie = 'data=' + encodeURIComponent( damage );
 //}
 
-function seve(){
+function saveai(){
   $.cookie("KEY", "45", { expires: 10000 });
 }
 
-function load(){
+function loadai(){
   load = $.cookie("KEY");
   alert(load);
 
