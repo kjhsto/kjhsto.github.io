@@ -45,7 +45,7 @@ function load_damage(){
   if($.cookie("DAMAGE_CO") === undefined){
     damage = 0;
   }else{
-    damage = $.cookie("DAMAGE_CO");
+    damage = parseInt($.cookie("DAMAGE_CO"));
   }
 }
 
