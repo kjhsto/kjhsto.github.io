@@ -44,9 +44,12 @@ $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 function load_damage(){
   if($.cookie("DAMAGE_CO") === undefined){
     damage = 0;
+    target = document.getElementById("canvas_up");
+  target.innerHTML = damage;
   }else{
     damage = parseInt($.cookie("DAMAGE_CO"));
-    console.log(damage);
+    target = document.getElementById("canvas_up");
+  target.innerHTML = damage;
   }
 }
 
