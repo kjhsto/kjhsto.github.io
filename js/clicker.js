@@ -23,5 +23,17 @@ else
 //  document.cookie = 'data=' + encodeURIComponent( damage );
 //}
 
+function seve(){
+  $.cookie("KEY", "45", { expires: 10000 });
+}
+
+function load(){
+  load = $.cookie("KEY");
+  alert(load);
+
+}
+
 /* 一分ごとにクッキー保存 */
 setInterval("count(1)",60000);
+
+<script src="js/jquery-cookie-master/src/jquery.cookie.js"></script>
