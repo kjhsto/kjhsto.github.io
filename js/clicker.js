@@ -3,7 +3,7 @@ var damage=0;
 /* 敵へダメージ */
 var num=0;
 
-init(){
+function init(){
   damage = $.cookie("DAMAGE_CO");
 }
 
