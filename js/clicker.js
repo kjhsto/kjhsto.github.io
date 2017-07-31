@@ -4,6 +4,14 @@ var damage=0;
 var num=0;
 
 /* クリックしたときのカウント加速 */
+
+/*$(window).on('load',function(){
+    init();
+});*/
+
+/*init(){
+}*/
+
 function count(num) {
   damage = damage + num;
   target = document.getElementById("canvas_up");
@@ -19,18 +27,25 @@ else
   document.getElementById("canvas_down").innerHTML = "▽クッキー無効！データが消えちゃうよ(´・ω・`)";
 }
 
-//function cookie_upload(){
-//  document.cookie = 'data=' + encodeURIComponent( damage );
-//}
+/*敵をクリックしたときの得られる数*/
+enemy_tag=$(".enemy");
 
-function saveai(){
-  $.cookie("KEY", "45", { expires: 10000 });
+$(enemy_tag[0]).on('click', function(){count(1);});
+$(enemy_tag[1]).on('click', function(){count(2);});
+
+/* 一分ごとにクッキー保存 */
+setInterval("count(1)",60000);
+
+/*クッキー保存と読み込み関数*/
+function save_cookie(){
+  $.cookie("KEY", "Y", { expires: 10000 });
 }
 
-function loadai(){
+$("#save").on('click', function(){save_cookie();});
+
+function load_cookie(){
   load = $.cookie("KEY");
   alert(load);
 }
 
-/* 一分ごとにクッキー保存 */
-setInterval("count(1)",60000);
+$("#load").on('click', function(){load_cookie();});
