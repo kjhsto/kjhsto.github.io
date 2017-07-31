@@ -3,7 +3,7 @@ var damage=0;
 /* 敵へダメージ */
 var num=0;
 
-$(window).on('load',function(){
+$(window).on("load",function(){
     init();
     alert(load);
 });
