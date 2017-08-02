@@ -20,14 +20,14 @@ function nownow(){
 /*ログを飛ばすよ*/
 function log_tatakai(tex){
   past = $('#rireki').html();
-  $("#rireki").html(nownow()+"　"+tex+"<br>"+past);
+  $("#rireki").html("<span margin-right=\"5px\">"+nownow()+"</span>"+tex+"<br>"+past);
+  $("#rireki").scrollTop(0);
 }
 
 /* クリックしたときのカウント加速 */
 function count(num) {
   damage = damage + parseInt(num);
-  var target = document.getElementById("canvas_up");
-  target.innerHTML = damage;
+  $("#box2").html(damage);
 }
 
 //クッキー保存関数
@@ -63,13 +63,38 @@ setInterval("save_cookie(\"DAMAGE_CO\",damage)",60000);
 function load_damage(){
   if($.cookie("DAMAGE_CO") === undefined){
     damage = 0;
-    var target = document.getElementById("canvas_up");
-  target.innerHTML = damage;
+    $("#box2").html(damage);
   }else{
     damage = parseInt($.cookie("DAMAGE_CO"));
-    var target = document.getElementById("canvas_up");
-  target.innerHTML = damage;
+    $("#box2").html(damage);
   }
+}
+
+//大きすぎる数値は略記する
+//自作略記エンジン c jyll
+// 999→999 , 1234→1.234k , 65432→65.43k , 10^9→1g
+function formatNumeral(num, roundto){
+
+  //キロ、メガ、ギガ... aa,bb,cc は仮表記
+  var SUFFIXES = ["","k","m","g","t","p","e","z","y","aa","bb","cc","dd","ee","ff","gg","hh"]
+
+  //10^x 9999→3, 10000→4
+  var digit = Math.floor(Math.log(num) * Math.LOG10E);
+
+  //どの接尾辞になるかのインデックス
+  var index = Math.floor(digit/3);
+
+  //23000 → (2.3 * 10) * k としたい 1000単位で丸めたあまりの指数 
+  var mod = digit % 3;
+
+  // 切り捨て丸め計算 + modぶんの乗算
+  // 123456 → 123 にしたい("k"はこれまでに計算済)
+  // 123456 → 1.23456 → 123.456 → 123
+  // 浮動小数の計算誤差を回避するために指数計算をいっぺんに行っているので読みにくい
+  var app = Math.floor(num*Math.pow(10,roundto) / Math.pow(10,digit)) / Math.pow(10,roundto-mod); 
+
+  // 123 + "k" → "123k" にフォーマットして返す
+  return  app+ SUFFIXES[index];
 }
 
 /*初期化関数だよ*/

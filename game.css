@@ -10,6 +10,7 @@ color:#ffffff;
     margin:0px auto;
     width:306px;
     height:544px;
+    border-radius: 10px;
 }
 #canvas_up {
     display: block;
@@ -28,6 +29,7 @@ color:#ffffff;
     top:0px;
     left:0px;
     z-index: 0;
+    background-color: black;
 }
 
 #canvas_middle {
@@ -100,6 +102,25 @@ color:#ffffff;
     left: 60px;
 }
 
+#box2 {
+ /*   padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;*/
+    color: #ffffff;/*文字色*/
+/*    background: #FFF; */
+    border: solid 2px #ffffff;/*線*/
+    border-radius: 5px;/*角の丸み*/
+/*    width:10%;*/
+}
+#box3 {
+ /*   padding: 0.5em 1em;*/
+    /*font-weight: bold;*/
+    color: #ffffff;/*文字色*/
+/*    background: #FFF; */
+    border: solid 2px #ffffff;/*線*/
+    border-radius: 5px;/*角の丸み*/
+/*    width:10%;*/
+}
 ::-webkit-scrollbar {
     width: 12px;
 }
