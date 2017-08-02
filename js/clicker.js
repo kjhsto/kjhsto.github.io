@@ -24,12 +24,6 @@ function log_tatakai(tex){
   $("#rireki").scrollTop(0);
 }
 
-/* クリックしたときのカウント加速 */
-function count(num) {
-  damage = damage + parseInt(num);
-  $("#box2").html(damage);
-}
-
 //クッキー保存関数
 function cookie_check(){
 if (navigator.cookieEnabled)  // cookieが使えるか確認
@@ -59,17 +53,6 @@ $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
 /* 30秒ごとにクッキー保存 */
 setInterval("save_cookie(\"DAMAGE_CO\",damage)",60000);
 
-/*ダメージをロードするよ*/
-function load_damage(){
-  if($.cookie("DAMAGE_CO") === undefined){
-    damage = 0;
-    $("#box2").html(damage);
-  }else{
-    damage = parseInt($.cookie("DAMAGE_CO"));
-    $("#box2").html(damage);
-  }
-}
-
 //大きすぎる数値は略記する
 //自作略記エンジン c jyll
 // 999→999 , 1234→1.234k , 65432→65.43k , 10^9→1g
@@ -95,6 +78,26 @@ function formatNumeral(num, roundto){
 
   // 123 + "k" → "123k" にフォーマットして返す
   return  app+ SUFFIXES[index];
+}
+
+/* クリックしたときのカウント加速 */
+function count(num) {
+  damage = damage + parseInt(num);
+  damage_h = formatNumeral(damage, 5);
+  $("#box2").html(damage_h);
+}
+
+/*ダメージをロードするよ*/
+function load_damage(){
+  if($.cookie("DAMAGE_CO") === undefined){
+    damage = 0;
+    damage_h = formatNumeral(damage, 5);
+    $("#box2").html(damage);
+  }else{
+    damage = parseInt($.cookie("DAMAGE_CO"));
+    damage_h = formatNumeral(damage, 5);
+    $("#box2").html(damage_h);
+  }
 }
 
 /*初期化関数だよ*/
