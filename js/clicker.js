@@ -3,22 +3,30 @@ var damage=0;
 /* 敵へダメージ */
 var num=0;
 
-/*初期化関数だよ*/
-function init(){
-  load_damage();
-  cookie_check();
+/*現在時刻*/
+function nownow(){
+  var now = new Date();
+  var y = now.getFullYear();
+  var m = now.getMonth() + 1;
+  var d = now.getDate();
+  var w = now.getDay();
+  var wd = ["日", "月", "火", "水", "木", "金", "土"];
+  var h = now.getHours();
+  var mi = now.getMinutes();
+  var s = now.getSeconds();
+  return (("0"+h).slice(-2) + ":" + ("0"+mi).slice(-2) + ":" + ("0"+s).slice(-2));
 }
 
 /*ログを飛ばすよ*/
 function log_tatakai(tex){
   past = $('#rireki').html();
-  $("#rireki").html(tex+"<br>"+past);
+  $("#rireki").html(nownow()+"　"+tex+"<br>"+past);
 }
 
 /* クリックしたときのカウント加速 */
 function count(num) {
   damage = damage + parseInt(num);
-  target = document.getElementById("canvas_up");
+  var target = document.getElementById("canvas_up");
   target.innerHTML = damage;
 }
 
@@ -55,13 +63,19 @@ setInterval("save_cookie(\"DAMAGE_CO\",damage)",60000);
 function load_damage(){
   if($.cookie("DAMAGE_CO") === undefined){
     damage = 0;
-    target = document.getElementById("canvas_up");
+    var target = document.getElementById("canvas_up");
   target.innerHTML = damage;
   }else{
     damage = parseInt($.cookie("DAMAGE_CO"));
-    target = document.getElementById("canvas_up");
+    var target = document.getElementById("canvas_up");
   target.innerHTML = damage;
   }
+}
+
+/*初期化関数だよ*/
+function init(){
+  load_damage();
+  cookie_check();
 }
 
 /*初期化するよ*/
