@@ -3,6 +3,12 @@ var damage=0;
 /* 敵へダメージ */
 var num=0;
 
+/* オブジェクトのテスト */
+var state = {
+  money:0,
+  damage:0
+}
+
 /*現在時刻*/
 function nownow(){
   var now = new Date();
@@ -48,7 +54,11 @@ function save_cookie(key,num){
   log_tatakai("▽ここまでの活躍をセーブしました！");
 }
 
+/*データセーブだよ*/
 $("#save").on('click', function(){save_cookie("DAMAGE_CO",damage);});
+
+menu_tag=$(".menu_ran");
+$(menu_tag[1]).on('click', function(){save_cookie("DAMAGE_CO",damage);});
 
 /* 30秒ごとにクッキー保存 */
 setInterval("save_cookie(\"DAMAGE_CO\",damage)",60000);
@@ -110,3 +120,5 @@ function init(){
 $(window).on("load",function(){
     init();
 });
+
+$("#testran").html(state.money);

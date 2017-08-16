@@ -1,56 +1,68 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>くずてつおきば。</title>
-        <link rel="stylesheet" href="jquery.jscrollpane.css" type="text/css">
-    <link rel="stylesheet" href="game.css" type="text/css">
-</head>
-<body>
-    <!-- js呼び出し -->
-    <div id="canvas"><!-- ▼枠開始 -->
-        <div id="canvas_up"><!-- ▼上部分開始 -->
-        <div id="box2" style="display:inline-block;float:right;min-width:50px;"></div>
-        <div id="box3" style="display:inline-block;float:right;min-width:50px;">a</div>
-        </div><!-- ▲上部分終了 -->
+    <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>くずてつおきば。</title>
+            <link rel="stylesheet" href="jquery.jscrollpane.css" type="text/css">
+        <link rel="stylesheet" href="game.css" type="text/css">
+    </head>
+    <body>
+        <!-- js呼び出し -->
+        <div id="canvas"><!-- ▼枠開始 -->
 
-        <div id="canvas_mimato"><!-- ▼中部分まとめ開始 -->
-            <div id="st1">
-             <img src="./game/last.png" alt="last">
-         </div>
-         <div id="waku">
-             <img src="./game/waku.png" alt="waku">
-         </div>
+            <div id="canvas_up"><!-- ▼上部分開始 -->
+            <div id="menu_hojo">
+            <ul class="menu">
+          <li>▽MENU
+        <ul class="sub">
+          <li class="menu_ran"><a href="#">MENU 2-1</a></li>
+          <li class="menu_ran"><a href="#">SAVE</a></li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+            <div id="box2" style="display:inline-block;float:right;min-width:50px;">0</div>
+            <div id="box3" style="display:inline-block;float:right;min-width:50px;">a</div>
+            </div><!-- ▲上部分終了 -->
 
-         <div id="canvas_middle"><!-- ▼中部分開始 -->
-
-             <div id="enemy1"><img class="enemy" src="./game/enemy1.png" width="200" height="195" alt="enemy1">
+            <div id="canvas_mimato"><!-- ▼中部分まとめ開始 -->
+                <div id="st1">
+                 <img src="./game/last.png" alt="last">
              </div>
-         </div><!-- ▲中部分終了 -->
-         <div id="canvas_middle2"><!-- ▼中2部分開始 -->
-             <div id="tatakai_kiroku"><!-- ▼たたかいのきろく上！開始 -->
-                 戦闘履歴
-             </div><!-- ▼たたかいのきろく上！終了-->
-             <div id="tatakai_kiroku2"><!-- ▼たたかいのきろく下！開始 -->
-             <div id="rireki"; style="width:292px; height:54px; overflow:auto;
-                 background-color:rgba(0,0,0,0);color:#FFF;">
-                 ▽ここにログが表示されるよー。
+             <div id="waku">
+                 <img src="./game/waku.png" alt="waku">
              </div>
-         </div><!-- ▼たたかいのきろく下！終了 -->
-     </div><!-- ▲中2部分終了 -->
- </div><!-- ▲中まとめ部分終了 -->
 
- <div id="canvas_down"><!-- ▼下部分開始 -->
-<img src="./game/hu (1).png" width="30" height="30" alt="01"><img src="./game/hu (2).png" width="30" height="30" alt="02"><img src="./game/hu (3).png" width="30" height="30" alt="03"><img src="./game/hu (4).png" width="30" height="30" alt="04"><img src="./game/hu (5).png" width="30" height="30" alt="05">
- </div><!-- ▲下部分終了 -->
-</div><!-- ▲枠終了 -->
-<img ID="save" src="./game/mon1/mon_005.gif" alt="save">
-<img ID="load" src="./game/mon1/mon_005.gif" alt="load">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js/jquery-cookie-master/src/jquery.cookie.js"></script>
-<script src="js/clicker.js"></script>
+             <div id="canvas_middle"><!-- ▼中部分開始 -->
 
-</body>
-</html>
+                 <div id="enemy1"><img class="enemy" src="./game/enemy1.png" width="200" height="195" alt="enemy1">
+                 </div>
+             </div><!-- ▲中部分終了 -->
+             <div id="canvas_middle2"><!-- ▼中2部分開始 -->
+                 <div id="tatakai_kiroku"><!-- ▼たたかいのきろく上！開始 -->
+                     戦闘履歴
+                 </div><!-- ▼たたかいのきろく上！終了-->
+                 <div id="tatakai_kiroku2"><!-- ▼たたかいのきろく下！開始 -->
+                 <div id="rireki"; style="width:292px; height:54px; overflow:auto;
+                     background-color:rgba(0,0,0,0);color:#FFF;">
+                     ▽ここにログが表示されるよー。
+                 </div>
+             </div><!-- ▼たたかいのきろく下！終了 -->
+         </div><!-- ▲中2部分終了 -->
+     </div><!-- ▲中まとめ部分終了 -->
+
+     <div id="canvas_down"><!-- ▼下部分開始 -->
+    <img src="./game/hu (1).png" width="30" height="30" alt="01"><img src="./game/hu (2).png" width="30" height="30" alt="02"><img src="./game/hu (3).png" width="30" height="30" alt="03"><img src="./game/hu (4).png" width="30" height="30" alt="04"><img src="./game/hu (5).png" width="30" height="30" alt="05">
+     </div><!-- ▲下部分終了 -->
+    </div><!-- ▲枠終了 -->
+    <div id="testran">あさ</div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/jquery-cookie-master/src/jquery.cookie.js"></script>
+    <script src="js/clicker.js"></script>
+    <script src="js/gamemenu.js"></script>
+
+    </body>
+    </html>
