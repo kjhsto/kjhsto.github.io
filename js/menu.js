@@ -42,17 +42,16 @@ var w = window.innerWidth ? window.innerWidth : $(window).width();
 
 if(w > 1000){
 	$("#main").css("width","1000");
-	$("#test").text("横幅ok" + $("#main").width());
+//	$("#test").text("横幅ok" + $("#main").width());
 }else{
 	$("#main").css("width",w);
-	$("#test").text("横幅ng" + $("#main").width());
+//	$("#test").text("横幅ng" + $("#main").width());
 }
 });
 
 //
 
 }
-
 
 init();
 menu();

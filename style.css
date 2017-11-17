@@ -1,16 +1,35 @@
 * { margin: 0; padding: 0; }
 
-se{text-align:center;}
 
 #main {
 	margin-right: auto;
 	margin-left : auto;
 }
 
+#leftmain{
+margin-right:20px;
+width :730px;
+display:block;
+float:left;
+}
+
+#rightmain{
+width :250px;
+display:block;
+float:left;
+
+}
 #headder{
 	width :100%;
-	height :200px;
+	height :199px;
 	background:#333;
+	text-align:center;
+	vertical-align: middle;
+	border-bottom:1px solid #777;
+}
+
+#logo{
+	margin-top:30px;
 }
 
 #globalNavi{
@@ -18,6 +37,7 @@ se{text-align:center;}
 	margin:0px;
 	padding:0px;
 	background:#333;
+	display:block;
 
 }
 
@@ -28,7 +48,7 @@ se{text-align:center;}
 }
 
 #globalNavi ul li a{
-	background:#666;
+	background:#333;
 	width: 20%;
 	float: left;
 	padding:10px 0;
@@ -51,4 +71,43 @@ se{text-align:center;}
     width: 100%;
     max-width: 1000px;
     z-index: 10000;
+}
+
+.rimenu{
+	display:block;
+	border:solid 1px #333;
+	margin-top:10px;
+}
+
+p1 {
+	display:block;
+	padding-top:10px;
+	border-top:solid 1px #333;
+	border-bottom:solid 1px #333;
+	border-left:solid 30px #333;
+	border-right:solid 1px #333;
+	margin-top:10px;
+	padding-bottom:10px;
+	margin-bottom:10px;
+	padding-left:5px;
+	font-size: 25px;
+	box-sizing:border-box;
+	text-align:left;
+	height : auto;
+}
+
+p2 {
+	display:block;
+	margin-left:30px;
+	text-align:left;
+	height : auto;
+	box-sizing:border-box;
+}
+
+l1 {
+	display:block;
+	border-left:solid 5px #333;
+	border-bottom:dashed 1px #333;
+	margin:1px;
+	padding-left:5px;
 }
