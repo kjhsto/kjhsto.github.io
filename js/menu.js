@@ -25,7 +25,7 @@ if(w > 1000){
 	$("#main").css("width","1000");
 	$("#test").text("横幅ok" + $("#main").width());
 }else{
-	$("#main").css("width",w);
+	$("#main").css("width","1000");
 	$("#test").text("横幅ng" + $("#main").width());
 }
 
@@ -40,13 +40,13 @@ function init(){
 $(function(){
 var w = window.innerWidth ? window.innerWidth : $(window).width();
 
-if(w > 1000){
-	$("#main").css("width","1000");
+//if(w > 1000){
+//	$("#main").css("width","1000");
 //	$("#test").text("横幅ok" + $("#main").width());
-}else{
-	$("#main").css("width",w);
+//}else{
+//	$("#main").css("width",w);
 //	$("#test").text("横幅ng" + $("#main").width());
-}
+//}
 });
 
 //
