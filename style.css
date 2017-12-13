@@ -1,5 +1,19 @@
 * { margin: 0; padding: 0; }
 
+a {
+color:#ef810f;
+text-decoration:underline;
+}
+
+a:link {
+color:#ef810f;
+text-decoration:underline;
+}
+
+a:visited {
+color:#ff5900;
+text-decoration:underline;
+}
 
 #main {
 	margin-right: auto;
