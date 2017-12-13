@@ -1,0 +1,26 @@
+	<!DOCTYPE html>
+	<html lang="ja">
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>１日１冊！</title>
+	<link rel="stylesheet" href="stylereadbooks.css" type="text/css">
+	</head>
+	<body>
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/menu.js"></script>
+	<script src="./js/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<script src="./js/jquery.csv2table-0.02-b-4.8.js" type="text/javascript" charset="utf-8"></script>
+	<div id="main">
+	既読された者ども。
+	<div id="view0"></div>
+	<script>
+	$(function(){
+  	$('#view0').csv2table('./dokuha.csv');
+	});
+	</script>
+	</div><!-- main end -->
+	</body>
+
+	</html>
