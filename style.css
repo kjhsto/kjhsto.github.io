@@ -26,14 +26,16 @@ margin-right:20px;
 width :730px;
 display:block;
 float:left;
+box-sizing: border-box;
 }
 
 #rightmain{
 width :250px;
 display:block;
 float:left;
-
+box-sizing: border-box;
 }
+
 #headder{
 	width :100%;
 	height :199px;
